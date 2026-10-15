@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarbonIQ | Carbon Intelligence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<link rel="stylesheet"
+href="style.css">
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>🌿 CarbonIQ</h2>
+      <p class="subtitle">CLIMATE INTELLIGENCE</p>
+      <nav>
+        <button class="nav active" data-page="overview">▦ Overview</button>
+        <button class="nav" data-page="monitoring">◉ Monitoring</button>
+        <button class="nav" data-page="twin">◇ Digital Twin</button>
+        <button class="nav" data-page="assistant">✳ AI Assistant</button>
+        <button class="nav" data-page="calculator">⌁ Carbon Calculator</button>
+        <button class="nav" data-page="reports">▤ Reports</button>
+      </nav>
+      <div class="side-bottom">
+        <p>Small changes.<br><strong>Meaningful impact.</strong></p>
+        <small>Carbon Footprint Intelligence Platform</small>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <span>Workspace / <b id="breadcrumb">Overview</b></span>
+        <span class="demo">● DEMO DATA</span>
+      </header>
+
+      <section class="page active" id="overview">
+        <p class="eyebrow">FACILITY INTELLIGENCE</p>
+        <h1>Good morning, <span>team.</span></h1>
+        <p class="muted">Your facility's environmental performance at a glance.</p>
+
+        <div class="metrics">
+          <article class="card">
+            <p>Estimated emissions</p>
+            <h2 id="emissions">2,842</h2>
+            <small>kg CO₂e</small>
+          </article>
+          <article class="card">
+            <p>Energy consumed</p>
+            <h2 id="energy">4,060</h2>
+            <small>kWh</small>
+          </article>
+          <article class="card">
+            <p>Potential energy waste</p>
+            <h2>312</h2>
+            <small>kWh · Estimated</small>
+          </article>
+          <article class="card">
+            <p>Open alerts</p>
+            <h2>06</h2>
+            <small>Demo alerts</small>
+          </article>
+        </div>
+
+        <div class="grid">
+          <article class="panel">
+            <h3>Emissions overview</h3>
+            <p class="muted">Illustrative weekly emissions</p>
+            <div class="bars">
+              <div style="height:55%"><span>Mon</span></div>
+              <div style="height:72%"><span>Tue</span></div>
+              <div style="height:48%"><span>Wed</span></div>
+              <div style="height:85%"><span>Thu</span></div>
+              <div style="height:65%"><span>Fri</span></div>
+              <div style="height:43%"><span>Sat</span></div>
+              <div style="height:35%"><span>Sun</span></div>
+            </div>
+          </article>
+          <article class="panel">
+            <h3>Energy by area</h3>
+            <div class="area"><span>Production</span><b>42%</b></div>
+            <div class="progress"><span style="width:42%"></span></div>
+            <div class="area"><span>Office</span><b>26%</b></div>
+            <div class="progress blue"><span style="width:26%"></span></div>
+            <div class="area"><span>HVAC</span><b>20%</b></div>
+            <div class="progress purple"><span style="width:20%"></span></div>
+            <div class="area"><span>Other</span><b>12%</b></div>
+            <div class="progress amber"><span style="width:12%"></span></div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <h3>Recent alerts</h3>
+          <div class="alert"><span>⚠</span><div><b>HVAC running outside schedule</b><p>North wing · Needs verification</p></div></div>
+          <div class="alert"><span>◷</span><div><b>Equipment idle state to verify</b><p>Production zone · Sample alert</p></div></div>
+          <div class="alert"><span>⚡</span><div><b>Energy usage above baseline</b><p>Office floor · Sample alert</p></div></div>
+        </article>
+        <p class="footnote">Illustrative demo data. Values are not verified facility measurements.</p>
+      </section>
+
+      <section class="page" id="monitoring">
+        <p class="eyebrow">COMPUTER VISION</p>
+        <h1>Live <span>monitoring.</span></h1>
+        <p class="muted">Preview facility video and review example equipment states.</p>
+        <article class="panel">
+          <h3>Facility camera</h3>
+          <p class="muted">Upload a video for preview. AI detection is not connected.</p>
+          <input type="file" id="videoUpload" accept="video/*">
+          <video id="videoPreview" controls></video>
+          <p id="videoStatus" class="muted">No video selected.</p>
+        </article>
+        <article class="panel">
+          <h3>Equipment status — demo</h3>
+          <div class="alert"><span>●</span><div><b>HVAC unit 04</b><p>North wing · Active</p></div></div>
+          <div class="alert"><span>◷</span><div><b>Production motor 02</b><p>Zone A · Idle state to verify</p></div></div>
+          <div class="alert"><span>?</span><div><b>Air compressor 01</b><p>Plant room · Unknown</p></div></div>
+        </article>
+      </section>
+
+      <section class="page" id="twin">
+        <p class="eyebrow">SCENARIO MODELLING</p>
+        <h1>Digital <span>twin.</span></h1>
+        <p class="muted">Simulate possible energy and emissions reductions.</p>
+        <div class="grid">
+          <article class="panel">
+            <h3>Scenario inputs</h3>
+            <label>Baseline energy (kWh)</label>
+            <input id="baseEnergy" type="number" min="0" value="4060">
+            <label>Potential energy reduction (%)</label>
+            <input id="saving" type="range" min="0" max="60" value="15">
+            <p><b id="savingLabel">15%</b></p>
+            <label>Emission factor (kg CO₂e/kWh)</label>
+            <input id="factor" type="number" min="0" step="0.01" value="0.70">
+            <button class="primary" id="simulate">Run simulation</button>
+          </article>
+          <article class="panel">
+            <h3>Projected impact</h3>
+            <p class="muted">Estimated emissions reduction</p>
+            <h2 id="reduction">426.30 kg CO₂e</h2>
+            <div class="result-row"><span>Baseline emissions</span><b id="baselineResult">2,842 kg</b></div>
+            <div class="result-row"><span>Scenario emissions</span><b id="scenarioResult">2,415.70 kg</b></div>
+            <div class="result-row"><span>Energy saved</span><b id="savedEnergy">609 kWh</b></div>
+            <p id="simulationNote" class="note">Projection only, based on your assumptions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="assistant">
+        <p class="eyebrow">GENERATIVE AI</p>
+        <h1>Sustainability <span>assistant.</span></h1>
+        <p class="muted">Ask for practical ideas to reduce your facility's footprint.</p>
+        <article class="panel">
+          <div id="chat" class="chat">
+            <p class="bot">Hello! Ask me about reducing energy use, carbon calculations, or a 30-day sustainability plan. This is a demo assistant.</p>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" placeholder="Ask a question..." required>
+            <button class="primary">Send</button>
+          </form>
+          <button class="secondary prompt" data-prompt="How can we reduce energy use?">Reduce energy use</button>
+          <button class="secondary prompt" data-prompt="Explain carbon footprint calculation.">Explain CO₂e</button>
+          <button class="secondary prompt" data-prompt="Give me a 30-day action plan.">30-day plan</button>
+          <p class="footnote">Demo responses only. Connect an LLM backend for live AI.</p>
+        </article>
+      </section>
+
+      <section class="page" id="calculator">
+        <p class="eyebrow">CARBON ACCOUNTING</p>
+        <h1>Carbon <span>calculator.</span></h1>
+        <p class="muted">Estimate emissions from electricity use.</p>
+        <article class="panel">
+          <label for="calcEnergy">Electricity consumed (kWh)</label>
+          <input id="calcEnergy" type="number" min="0" value="4060">
+          <label for="calcFactor">Emission factor (kg CO₂e/kWh)</label>
+          <input id="calcFactor" type="number" min="0" step="0.01" value="0.70">
+          <button class="primary" id="calculate">Calculate emissions</button>
+          <div class="calc-result">
+            <p class="muted">Estimated footprint</p>
+            <h2 id="calcResult">2,842 kg CO₂e</h2>
+            <p id="calcFormula">4,060 kWh × 0.70 kg CO₂e/kWh</p>
+          </div>
+          <p class="footnote">Use an appropriate, verified emission factor for your location.</p>
+        </article>
+      </section>
+
+      <section class="page" id="reports">
+        <p class="eyebrow">SUSTAINABILITY REPORTING</p>
+        <h1>Environmental <span>reports.</span></h1>
+        <p class="muted">Export the current illustrative dashboard data.</p>
+        <article class="panel">
+          <h3>Report summary</h3>
+          <div class="result-row"><span>Energy consumption</span><b id="reportEnergy">4,060 kWh</b></div>
+          <div class="result-row"><span>Estimated emissions</span><b id="reportEmissions">2,842 kg CO₂e</b></div>
+          <p class="note">This summary uses demo data or values entered into the calculator. Validate all figures before reporting.</p>
+          <button class="primary" id="downloadReport">Download CSV report</button>
+          <button class="secondary" id="printReport">Print / Save as PDF</button>
+        </article>
+      </section>
+      <div id="toast" role="status"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
